@@ -1,5 +1,6 @@
 /*
-This approach will use anonymous classes.
+This approach will use lambda expression.
+This will not generate an anonymous class in the out/production folder.
  */
 package lambdas;
 
@@ -9,12 +10,7 @@ public class ConsumerDemo {
 
 
     public static void main(String[] args) {
-        Consumer consumer = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer i) {
-                System.out.println("Printing: " + i);
-            }
-        };
+        Consumer<Integer> consumer = (i) -> System.out.println("Printing: " + i);
         consumer.accept(10);
     }
 }
