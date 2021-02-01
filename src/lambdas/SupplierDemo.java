@@ -1,18 +1,19 @@
 /*
-This approach is using the traditional way.
+This approach is using the anonymous class.
  */
 package lambdas;
 
 import java.util.function.Supplier;
 
-public class SupplierDemo implements Supplier<Integer> {
-    @Override
-    public Integer get() {
-        return 1;
-    }
+public class SupplierDemo {
 
     public static void main(String[] args) {
-        SupplierDemo supplierDemo = new SupplierDemo();
-        System.out.println(supplierDemo.get());
+        Supplier<Integer> supplier = new Supplier<Integer>() {
+            @Override
+            public Integer get() {
+                return 1;
+            }
+        };
+        System.out.println(supplier.get());
     }
 }
