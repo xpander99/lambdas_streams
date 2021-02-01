@@ -1,19 +1,21 @@
 /*
-The traditional way.
+The approach using anonymous classes.
  */
 package lambdas;
 
 import java.util.function.Predicate;
 
-public class PredicateDemo implements Predicate<Integer> {
+public class PredicateDemo {
 
-    @Override
-    public boolean test(Integer i) {
-        return i % 2 == 0;
-    }
 
-    public static void main(String[] args){
-        PredicateDemo predicateDemo = new PredicateDemo();
-        System.out.println(predicateDemo.test(20));
+    public static void main(String[] args) {
+        Predicate<Integer> predicate = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer integer) {
+                return integer % 2 == 0;
+            }
+        };
+        System.out.println(predicate.test(10));
+
     }
 }
