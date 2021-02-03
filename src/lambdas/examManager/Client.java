@@ -4,13 +4,7 @@ We can get rid of AverageScoreCalculatorImpl, HighestScoreCalculatorImpl
  */
 package lambdas.examManager;
 
-import lambdas.calculators.AverageScoreCalculatorImpl;
 import lambdas.calculators.CustomCalculationInterface;
-import lambdas.calculators.HighestScoreCalculatorImpl;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Client {
     public static void main(String[] args) {
