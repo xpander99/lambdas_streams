@@ -17,7 +17,7 @@ public class ExamManager {
 
     }
 
-    public Double customCalculation(Function<List<Double>,? extends Double> customCalculation){
+    public Double customCalculation(Function<List<Double>,Double> customCalculation){
         return customCalculation.apply(this.scores);
     }
 }
