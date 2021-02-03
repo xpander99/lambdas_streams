@@ -11,16 +11,16 @@ import java.util.function.Function;
 
 public class Client {
     public static void main(String[] args) {
-        Function<List<Double>,Double> lambdaAverage = scores -> {
+        Function<List<Double>, Double> lambdaAverage = scores -> {
             Double average = 0d;
-            for(Double nextScore : scores){
+            for (Double nextScore : scores) {
                 average += nextScore;
             }
             return average / scores.size();
         };
-        Function<List<Double>,Double> lambdaHighest = scores -> {
+        Function<List<Double>, Double> lambdaHighest = scores -> {
             Double highest = 0d;
-            for(Double nextScore : scores){
+            for (Double nextScore : scores) {
                 highest = Math.max(highest, nextScore);
             }
             return highest;
