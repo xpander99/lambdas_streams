@@ -2,7 +2,7 @@ package lambdas.examManager;
 
 import java.util.List;
 import java.util.ArrayList;
-import lambdas.calculators.CustomCalculationInterface;
+import java.util.function.Function;
 
 public class ExamManager {
     private List<Double> scores;
@@ -17,7 +17,7 @@ public class ExamManager {
 
     }
 
-    public Double customCalculation(CustomCalculationInterface customCalculation){
-        return customCalculation.execute(this.scores);
+    public Double customCalculation(Function<List<Double>,? extends Double> customCalculation){
+        return customCalculation.apply(this.scores);
     }
 }

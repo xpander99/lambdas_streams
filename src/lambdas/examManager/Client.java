@@ -1,21 +1,23 @@
 /*
 A simpler solution to this problem will be to use lambdas.
-We can get rid of AverageScoreCalculatorImpl, HighestScoreCalculatorImpl
+We can get rid of CustomCalculationInterface too, because we can use a predefined
+functional interface in java, namely Function.
  */
 package lambdas.examManager;
 
-import lambdas.calculators.CustomCalculationInterface;
+import java.util.List;
+import java.util.function.Function;
 
 public class Client {
     public static void main(String[] args) {
-        CustomCalculationInterface lambdaAverage = scores -> {
+        Function<List<Double>,Double> lambdaAverage = scores -> {
             Double average = 0d;
             for(Double nextScore : scores){
                 average += nextScore;
             }
             return average / scores.size();
         };
-        CustomCalculationInterface lambdaHighest = scores -> {
+        Function<List<Double>,Double> lambdaHighest = scores -> {
             Double highest = 0d;
             for(Double nextScore : scores){
                 highest = Math.max(highest, nextScore);
