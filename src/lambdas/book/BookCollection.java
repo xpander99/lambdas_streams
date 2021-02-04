@@ -2,19 +2,29 @@ package lambdas.book;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class BookCollection {
     private List<Book> books;
 
-    public List<Book> findBooks(Predicate<Book> searchCriteria) {
-        List<Book> results = new ArrayList<>();
-        for (Book nextBook : books) {
-            if(searchCriteria.test(nextBook))
-                results.add(nextBook);
-        }
-        return results;
+
+    public Map<Integer, String> findBooks(Predicate<Book> searchCriteria) {
+        return this.books
+                .stream()
+                .filter(searchCriteria)
+                .collect(Collectors.toMap(Book::getId, Book::getTitle));
+
     }
+
+    public long size(Predicate<Book> searchCriteria) {
+        return this.books
+                .stream()
+                .filter(searchCriteria)
+                .count();
+    }
+
 
     public BookCollection() {
         books = new ArrayList<>();

@@ -8,6 +8,7 @@ package lambdas.examManager;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Client {
     public static void main(String[] args) {
@@ -25,6 +26,7 @@ public class Client {
             }
             return highest;
         };
+
         ExamManager examManager = new ExamManager();
         System.out.println("Average score: " + examManager.customCalculation(lambdaAverage));
         System.out.println("Highest score: " + examManager.customCalculation(lambdaHighest));
